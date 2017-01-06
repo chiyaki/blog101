@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>Editing</h1>
+  <%= simple_form_for [:account, @post] do |f| %>
+    <%= f.input :title %>
+    <%= f.input :article, :input_html => {:style => 'height: 700px'}%>
+    <%= f.submit "Submit", class: "btn btn-default btn-sm" %>
+  <% end %>
+</div>

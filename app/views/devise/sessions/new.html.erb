@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="jumbotron">
+      <h1>Log in</h1>
+      <div class="row">
+          <div class="col-md-6">
+              <div>Become a seller</div>
+              <ul class="list-unstyled" style="line-height: 2">
+                  <li><span class="glyphicon glyphicon-ok"></span> See all your orders</li>
+                  <li><span class="glyphicon glyphicon-ok"></span> Fast re-order</li>
+                  <li><span class="glyphicon glyphicon-ok"></span> Save your favorites</li>
+                  <li><span class="glyphicon glyphicon-ok"></span> Fast checkout</li>
+                  <li><span class="glyphicon glyphicon-ok"></span> Get a gift <small>(only new customers)</small></li>
+                  <li><a href="/read-more/"><u>Read more</u></a></li>
+              </ul>
+          </div>
+          <div class="col-md-6">
+            <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+              <div class="form-inputs">
+                <%= f.input :email, required: true, autofocus: true %>
+                <%= f.input :password, required: true %>
+                <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+              </div>
+
+              <div class="form-actions">
+                <%= f.button :submit, "Log in", class: "btn btn-primary btn-lg" %>
+              </div>
+            <% end %>
+
+            <%= render "devise/shared/links" %>
+          </div>
+      </div>
+  </div>
+</div>
