@@ -1,0 +1,17 @@
+<div class="container">
+  <%= link_to('New blog', new_blog_path, class: "btn btn-default") %>
+  <br></br>
+  <table class="table">
+    <tbody>
+      <% @blogs.each do |blog| %>
+        <tr>
+          <td><%= link_to(blog.title, blog_posts_path(blog)) %></td>
+          <td><%= blog.description %></td>
+          <td><%= link_to("Edit", edit_blog_path(blog)) %> |
+              <%= link_to("Delete", blog_path(blog)) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

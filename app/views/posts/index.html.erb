@@ -1,9 +1,14 @@
+<div class="container">
+  <% if current_user && current_user == @blog.user %>
+    <%= link_to('New post', new_blog_post_path, class: "btn btn-default") %>
+  <% end %>
+</div>
 <% @posts.each do |post| %>
   <div class="container" style="background-color: #ffffff; padding: 20px 50px 50px 50px">
-    <h1><%= link_to(post.title, account_post_path(post)) %></h1>
+    <h1><%= link_to(post.title, blog_post_path(@blog, post)) %></h1>
     <p><%= post.created_at.strftime("%B %d, %Y %R") %></p>
     <p><%= markdown(post.article) %></p>
   </div>
   <div style="padding-bottom: 50px"></div>
 <% end %>
-<div align="center" style="margin: auto"><%= will_paginate @posts %></div>
+<div align="center" style="margin: auto"><%#= will_paginate @posts %></div>

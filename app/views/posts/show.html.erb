@@ -1,0 +1,9 @@
+<div class="container" style="background-color: #ffffff; padding: 20px 50px 50px 50px">
+  <div style="inline">
+    <% if current_user && current_user == @post.user %>
+      <%= link_to('Edit article', edit_blog_post_path(@blog, @post), class: "btn btn-default pull-right") %>
+    <% end %>
+    <h1><%= @post.title %></h1>
+  </div>
+  <p><%= markdown(@post.article) %></p>
+</div>
