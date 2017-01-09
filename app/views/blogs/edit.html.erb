@@ -1,8 +1,8 @@
 <div class="container">
   <h1>Edit blog</h1>
   <%= simple_form_for @blog do |f| %>
-    <%= f.input :title %>
-    <%= f.input :description %>
+    <%= f.input :title, hint: '20 characters', placeholder: "name your blog", input_html: { maxlength: 20 } %>
+    <%= f.input :description, hint: '50 characters', placeholder: "describe your blog", input_html: { maxlength: 50 } %>
     <%= f.submit "Submit", class: "btn btn-default btn-sm" %>
   <% end %>
 </div>
