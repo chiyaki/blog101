@@ -4,7 +4,11 @@
     <p>Several blogs under one account.</p>
     <p>Markdown friendly.</p>
     <p>Focus on writing.</p>
-      <a class="btn btn-lg btn-primary" href="users/sign_up" role="button">Get your own »</a>
+      <% if current_user %>
+        <a class="btn btn-lg btn-primary" href="account/blogs" role="button">Go to dashboard »</a>
+      <% else %>
+        <a class="btn btn-lg btn-primary" href="users/sign_up" role="button">Get your own »</a>
+      <% end %>
     </p>
   </div>
 </div>
